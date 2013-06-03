@@ -8,6 +8,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
+#  remember_token  :string(255)
+#  admin           :boolean          default(FALSE)
 #
 
 require 'spec_helper'
@@ -134,5 +136,11 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+  
+  it "should not have access to admin attr" do
+    expect do
+      User.new(admin: 1)
+    end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
   end
 end
