@@ -12,6 +12,15 @@
     </section>
   </aside>
   <div class="span8">
+    <% if @user.contracts.any? %>
+      <h3>Contracts (<%= @user.contracts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @contracts %>
+      </ol>
+      <%= will_paginate @contracts %>
+    <% end %>
+  </div>
+  <div class="span8">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>

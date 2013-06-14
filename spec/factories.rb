@@ -14,4 +14,14 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :contract do
+    name "Foo Bar Contract"
+    company "Foobars"
+    start_date Date.new(2013, 1, 1)
+    end_date Date.new(2013, 12, 31)
+    articles [1, 2, 3]
+    text "Lorem ipsum foo foo foobar baz bla bla bla"
+    user
+  end
 end

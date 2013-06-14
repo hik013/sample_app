@@ -8,9 +8,21 @@
         <%= render 'shared/stats' %>
       </section>
       <section>
+      <%= render 'shared/contract_form' %>
+      </section>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <section>
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
+    <div class="span8">
+      <h3>Sözleşmeler</h3>
+      <%= render 'shared/cfeed' %>
+    </div>
     <div class="span8">
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
@@ -18,7 +30,7 @@
   </div>
 <% else %>
     <div class="center hero-unit">
-      <h1>Welcome to the Sample App</h1>
+      <h1>Bursagaz Sözleşme Yönetimi Uygulaması'na Hoş Geldiniz!</h1>
       
       <h2>
         This is the home page for the
@@ -26,7 +38,7 @@
         sample application.
       </h2>
 
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+      <%= link_to "Sisteme kayıt ol!", signup_path, class: "btn btn-large btn-primary" %>
     </div>
 
     <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>

@@ -1,0 +1,11 @@
+<%= form_for(@contract) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  <%= f.text_area :name, placeholder: "Sözleşme ismi..." %>
+  <%= f.text_area :company, placeholder: "Şirket..." %>
+  <%= f.text_area :start_date %>
+  <%= f.text_area :end_date %>
+  <%= f.text_area :text, placeholder: "Sözleşme metni..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

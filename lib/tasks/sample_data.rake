@@ -2,6 +2,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_users
+    make_contracts
     make_microposts
     make_relationships
   end
@@ -21,6 +22,18 @@ def make_users
                  email: email,
                  password: password,
                  password_confirmation: password)
+  end
+end
+
+def make_contracts
+  users = User.all(limit: 6)
+  5.times do
+    name = "Foo Bar Contract"
+    company = "Foobars"
+    start_date = Date.new(2013, 1, 1)
+    end_date = Date.new(2013, 12, 31)
+    text = Faker::Lorem.sentence(5)
+    users.each { |user| user.contracts.create!(name: name, company: company, start_date: start_date, end_date: end_date, text: text) }
   end
 end
   

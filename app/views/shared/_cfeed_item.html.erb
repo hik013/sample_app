@@ -1,0 +1,15 @@
+<li id="<%= cfeed_item.id %>">
+  <%= link_to gravatar_for(cfeed_item.user), cfeed_item.user %>
+  <span class="user">
+    <%= link_to cfeed_item.user.name, cfeed_item.user %>
+  </span>
+  <span class="content"><%= cfeed_item.name %></span>
+  <span class="content"><%= cfeed_item.company %></span>
+  <span class="timestamp"><%= cfeed_item.start_date %></span>
+  <span class="timestamp"><%= cfeed_item.end_date %></span>
+  <span class="content"><%= cfeed_item.text %></span>
+  <span class="content"><%= cfeed_item.user %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(cfeed_item.created_at) %> ago.
+  </span>
+</li>
